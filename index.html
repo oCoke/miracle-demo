@@ -12,9 +12,10 @@
 <link rel="stylesheet" href="/css/dist/main.css">
 
     
-<link rel="stylesheet" href="/icon/css/icon.css">
+<link rel="stylesheet" href="/icon/css/all.min.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet">
     
     <style>
@@ -26,29 +27,30 @@
 
     <body>
         <header>
-            
-
-
-
-<div class="c-nav">
+            <div class="c-nav">
 	<div class="container navFlex">
 		<div class="flexItem">
-      <a href="/">
-        <h1 class="logo">Miracle</h1>
-      </a>
+      		<a href="/">
+        		<h1 class="logo">Miracle</h1>
+      		</a>
 		</div>
 		
-		<div class="flexItem hiden">
+		<div class="flexItem hiden logo">
 			<i class="fa fa-bars btnImg"></i>
 		</div>
 		<div class="flexItem show">
 			<ul>
 				
-          <li><a href="/">Home</a></li>
-    
-          <li><a href="/archives">Archives</a></li>
-    
-    
+          			<li><a href="/">Home</a></li>
+				
+				
+
+					<li><a href="javascript:;" id="toggle-theme"><i id="theme-icon" class="fas fa-sun"></i></a></li>
+				
+				
+				
+	
+			
 			</ul>
 		</div>
 	</div>
@@ -57,7 +59,8 @@
         </header>
         <div id="page-main" class="main-content">
         <div class="mg-top">
-            <div id="index-banner" class="text-center middle-center">
+            
+  <div id="index-banner" class="text-center middle-center">
     <div class="banner-text" id="typed-strings">
         <h3 id="index-slogan">
             Write the miracle in your heart.
@@ -66,6 +69,8 @@
     </div>
     <h3 id="typed"></h3>
 </div>
+
+
 <div class="post-card-center">
 <div class="post-card-main">
 <!-- 循环输出文章列表 -->
@@ -75,12 +80,12 @@
       <article class="index-card-info">
         <h3 class="index-header">
           
-            <i class="index-pin fa fa-thumb-tack" title="Pin on top"></i>
+            <i class="index-pin fas fa-thumbtack" title="Pin on top"></i>
           
-          <a href="/2020/12/04/hello-world/">Hello World</a>
+          <a href="/2020/12/25/hello-world/">Hello World</a>
         </h3>
         <p class="index-excerpt">
-          <a href="/2020/12/04/hello-world/">
+          <a href="/2020/12/25/hello-world/">
             
             
               
@@ -93,11 +98,18 @@ Quick
           
             
               <i class="fa fa-calendar meta-icon"></i>
-              <time datetime="2020-12-04 15:27" pubdate>
-                2020-12-04
+              <time datetime="2020-12-25 18:31" pubdate>
+                2020-12-25
               </time>
             
           
+          
+            &nbsp;|&nbsp;
+              <i class="fa fa-folder meta-icon"></i>
+              
+                <a href="/categories/Miracle/">Miracle</a>
+              
+            
           
           
             &nbsp;|&nbsp;
@@ -111,40 +123,9 @@ Quick
       </article>
     </div>
   
-    <div class="index-card">
-      
-      <article class="index-card-info">
-        <h3 class="index-header">
-          
-          <a href="/2020/12/17/hello/">Hexo Theme Miracle!</a>
-        </h3>
-        <p class="index-excerpt">
-          <a href="/2020/12/17/hello/">
-            
-            
-              
-            
-            Header 1Header 2Header 3Header 4Header 5Header 6Hello!
+</div>
+</div>
 
-          </a>
-        </p>
-        <div class="index-btm post-metas">
-          
-            
-              <i class="fa fa-calendar meta-icon"></i>
-              <time datetime="2020-12-17 18:16" pubdate>
-                2020-12-17
-              </time>
-            
-          
-          
-          
-        </div>
-      </article>
-    </div>
-  
-</div>
-</div>
         </div>
         </div>
         <!-- 引入页脚文件 -->
@@ -158,8 +139,13 @@ Quick
 <script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.18.0/js/md5.min.js"></script>
 <!-- 引入 JS 文件 -->
 
+<script src="/js/cookie.js"></script>
+
+
 <script src="/js/main.js"></script>
 
+
+<script src="/js/darkmode.js"></script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>

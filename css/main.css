@@ -13,6 +13,18 @@ _________________________________________________
 |                 License : MIT                 |
 |_______________________________________________|
 */
+:root {
+  --shadow-color: rgba(0,0,0,0.2);
+  --shadow-hover-color: rgba(0,0,0,0.28);
+  --first-text-color: #484848;
+  --second-text-color: #4c4c4c;
+  --third-text-color: #858585;
+  --default-text-color: #505050;
+  --link-color: #000;
+  --second-link-color: #4f9bfa;
+  --background-color: #fffffe;
+  --color-mode: 'light';
+}
 html,
 body {
   margin: 0;
@@ -156,7 +168,7 @@ index style
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 30px 0;
+  padding-top: 30px;
 }
 .index-pin {
   position: absolute;
@@ -383,10 +395,13 @@ NavBar
 .c-nav {
   width: 100%;
 }
+.c-nav h1 {
+  font-size: 1.7rem;
+}
 .c-nav .logo {
   color: #4c4c4c;
   padding-left: 20px !important;
-  line-height: 50px;
+  line-height: 85%;
   float: left;
 }
 .c-nav .navFlex {
@@ -415,14 +430,11 @@ NavBar
   text-decoration: none;
   border-bottom: 3px solid transparent;
 }
-.c-nav .logo {
-  height: 40px;
-}
 .c-nav .btnImg {
   color: #4c4c4c;
   height: 20px;
   width: 25px;
-  padding: 3px 8px 3px 8px;
+  padding: 0px 8px 0px 8px;
   box-sizing: content-box;
   border: 1px solid transparent;
 }
@@ -432,7 +444,7 @@ NavBar
   }
   .c-nav .navFlex {
     flex-wrap: wrap;
-    font-size: 30px;
+    font-size: 1.7rem;
     justify-content: space-between;
   }
   .c-nav ul li {
@@ -442,9 +454,6 @@ NavBar
   }
   .c-nav ul li a {
     border-bottom: 3px solid transparent;
-  }
-  .c-nav ul a:hover {
-    border-bottom: 3px solid #e4c17e;
   }
   .c-nav ul li:nth-child(4),
   .c-nav ul li:nth-child(5) {
@@ -473,4 +482,154 @@ NavBar
 }
 .mg-top {
   margin-top: 80.72px;
+}
+/* 
+---
+DarkMode
+--- 
+*/
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #3b3b3b;
+  }
+  a {
+    color: #1589e9;
+  }
+  a:hover {
+    color: #30a9de;
+  }
+  .c-nav {
+    background-color: #3b3b3c;
+  }
+  .c-nav h1,
+  .c-nav .btnImg {
+    color: #e4e4e4 !important;
+  }
+  .c-nav ul li a {
+    color: #e4e4e4;
+  }
+  #typed,
+  #index-slogan,
+  .typed-cursor {
+    color: #ddd !important;
+  }
+  .index-header a {
+    color: #c4c6c9 !important;
+  }
+  .post-metas,
+  .post-metas a,
+  .index-excerpt a {
+    color: #a7a9ad;
+  }
+  .post-meta,
+  #article {
+    background-color: #3b3b3c !important;
+    transition: all 0s ease !important;
+  }
+  .post-meta h3 {
+    color: #c4c6c9 !important;
+  }
+  .post-meta-label,
+  #post-meta-m .post-meta {
+    color: #a7a9ad;
+  }
+  #article {
+    color: #c4c6c9;
+  }
+  footer {
+    color: #a7a9ad;
+  }
+  .comments {
+    background-color: #3b3b3c;
+  }
+}
+.dark body {
+  background-color: #3b3b3b;
+}
+.dark a {
+  color: #1589e9;
+}
+.dark a:hover {
+  color: #30a9de;
+}
+.dark .c-nav {
+  background-color: #3b3b3c;
+}
+.dark .c-nav h1,
+.dark .c-nav .btnImg {
+  color: #e4e4e4 !important;
+}
+.dark .c-nav ul li a {
+  color: #e4e4e4;
+}
+.dark #typed,
+.dark #index-slogan,
+.dark .typed-cursor {
+  color: #ddd !important;
+}
+.dark .index-header a {
+  color: #c4c6c9 !important;
+}
+.dark .post-metas,
+.dark .post-metas a,
+.dark .index-excerpt a {
+  color: #a7a9ad;
+}
+.dark .post-meta,
+.dark #article {
+  background-color: #3b3b3c !important;
+  transition: all 0s ease !important;
+}
+.dark .post-meta h3 {
+  color: #c4c6c9 !important;
+}
+.dark .post-meta-label,
+.dark #post-meta-m .post-meta {
+  color: #a7a9ad;
+}
+.dark #article {
+  color: #c4c6c9;
+}
+.dark footer {
+  color: #a7a9ad;
+}
+.dark .comments {
+  background-color: #3b3b3c;
+}
+#toggle-theme,
+#theme-icon {
+  display: none !important;
+}
+/* 
+---
+Footer
+--- 
+*/
+footer p {
+  font-size: 1rem;
+}
+.pagination .current:hover,
+.pagination a:hover {
+  background-color: #f8f9fa;
+}
+.pagination .current,
+.pagination a {
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  line-height: 1.25;
+  border-radius: 0.125rem;
+  transition: #fffffe 0.2s ease-in-out;
+}
+.pagination {
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
