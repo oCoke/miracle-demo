@@ -5,27 +5,99 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     <title>Hello World - Miracle</title>
-    <!-- 引入 CSS 样式文件 -->
     
-<link rel="stylesheet" href="/css/dist/main.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hifun-team/hexo-theme-miracle@latest/source/icon/css/all.min.css">
+    
+    
+    <meta name="description" content="">
+    <meta name="author" content="YFun">
+    <meta name="keywords" content="">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    
+    <script>
+        function setCookie(c,a){(t=new Date).setTime(t.getTime()+6048e5),document.cookie=c+"="+a+"; expires="+t.toGMTString()+"; path=/;"}function getCookie(a){for(var b,h=a+"=",d=document.cookie.split(";"),f=0;f<d.length;f++)if(b=d[f].trim(),0==b.indexOf(h))return b.substring(h.length,b.length);return!1}function light(){setCookie("DARK_STATUS","0"),$("#toggle-dark-icon").removeClass("fa-sun"),$("#toggle-dark-icon").addClass("fa-moon"),$("body").removeClass("dark")}function dark(){setCookie("DARK_STATUS","1"),$("#toggle-dark-icon").removeClass("fa-moon"),$("#toggle-dark-icon").addClass("fa-sun"),$("body").addClass("dark")}function setExpire(b){b?7>(e=new Date).getHours()?setCookie("DARK_EXPIRE",new Date(e.getFullYear(),e.getMonth(),e.getDate(),7).getTime()):setCookie("DARK_EXPIRE",new Date(e.getFullYear(),e.getMonth(),e.getDate()+1,7).getTime()):6<(e=new Date).getHours()&&20>e.getHours()?setCookie("DARK_EXPIRE",new Date(e.getFullYear(),e.getMonth(),e.getDate(),20).getTime()):setCookie("DARK_EXPIRE",(20<=e.getHours()?new Date(e.getFullYear(),e.getMonth(),e.getDate()+1,7):new Date(e.getFullYear(),e.getMonth(),e.getDate(),7)).getTime())}function toggleDark(){"1"==getCookie("DARK_STATUS")?(light(),setExpire(0)):(dark(),setExpire(1))}function darkInit(){(e=new Date).getTime()>getCookie("DARK_EXPIRE")?(setCookie("DARK_EXPIRE","0"),1==getCookie("AUTO_DARK")?6<(e=new Date).getHours()&&20>e.getHours()?(light(),setExpire(0)):(dark(),setExpire(1)):(light(),setExpire(0))):1==getCookie("DARK_STATUS")?dark():light()}window.matchMedia("(prefers-color-scheme: dark)").addListener(a=>{1==getCookie("AUTO_DARK")&&(a.matches?dark():light(),setCookie("DARK_EXPIRE","0"))}),$(function(){darkInit(),1==getCookie("AUTO_DARK")&&window.matchMedia("prefers-color-scheme: dark").matches&&(dark(),setCookie("DARK_EXPIRE","0"))});
+    </script>
+    
 
-    
-<link rel="stylesheet" href="/icon/css/all.min.css">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet">
-    
-    <style>
-        body{
-            font-family: 'Noto Sans SC', sans-serif;
+    <link rel="stylesheet" href="/css/main.min.css">
+    <style>.hljs-comment,.hljs-quote{color:#969896;}.hljs-variable,.hljs-template-variable,.hljs-tag,.hljs-name,.hljs-selector-id,.hljs-selector-class,.hljs-regexp,.hljs-deletion{color:#cc6666;}.hljs-number,.hljs-built_in,.hljs-builtin-name,.hljs-literal,.hljs-type,.hljs-params,.hljs-meta,.hljs-link{color:#de935f;}.hljs-attribute{color:#f0c674;}.hljs-string,.hljs-symbol,.hljs-bullet,.hljs-addition{color:#b5bd68;}.hljs-title,.hljs-section{color:#81a2be;}.hljs-keyword,.hljs-selector-tag{color:#b294bb;}.hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:0.5em;}.hljs-emphasis{font-style:italic;}.hljs-strong{font-weight:bold;}
+</style>
+<style>
+    :root{
+        --shadow-color: rgba(0,0,0,0.2);
+        --sec-shadow: rgba(0,0,0,0.1);
+        --shadow-hover-color: rgba(0,0,0,0.28);
+        --first-text-color: #484848;
+        --second-text-color: #4c4c4c;
+        --third-text-color: #858585;
+        --default-text-color: #505050;
+        --default-link-color: #007bff;
+        --link-color: #000000;
+        --second-link-color: #4F9BFA;
+        --post-bkg-color: #fdfdfd;
+        --page-bkg-color: #ffffff;
+        --nav-bkg-color: rgba(253,253,253,0.5);
+        --nav-a-hover-color: #3498db;
+        --post-sec-text-color: #718096;
+        --sec-bkg: #f2f5f8;
+        --color-mode: 'light';
+    }
+</style>
+
+<style>
+        .dark{
+            --shadow-color: rgba(0,0,0,0.2);
+            --shadow-hover-color: rgba(0,0,0,0.28);
+            --first-text-color: #ddd;
+            --second-text-color: #c4c6c9;
+            --third-text-color: #a7a9ad;
+            --default-text-color: #505050;
+            --default-link-color: #1589e9;
+            --link-color: #000000;
+            --second-link-color: #30a9de;
+            --post-bkg-color: #3b3b3c;
+            --page-bkg-color: #3b3b3b;
+            --nav-bkg-color: #3b3b3c;
+            --nav-a-hover-color: #3498db;
+            --post-sec-text-color: #a7a9ad;
+            --sec-bkg: #364151;
+            --color-mode: 'dark';
         }
-    </style>
+</style>
+
+
+
+    
 <meta name="generator" content="Hexo 5.2.0"></head>
 
+
     <body>
+        
+            <div class="cloading">
+                <noscript>
+                    <div class="note note-danger">
+                        <div class="title">无法使用 JavaScript</div>
+                        此网站依赖 JavaScript 的使用，如不使用 JavaScript，您将无法正常访问该网站。
+                    </div>
+                    <style>
+                        .cloading .loading{
+                            display: none;
+                        }
+                    </style>
+                </noscript>
+                <div class="loading">
+                    <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+                     </svg>
+                </div>
+            </div>
+        
         <header>
             <div class="c-nav">
 	<div class="container navFlex">
@@ -43,14 +115,20 @@
 				
           			<li><a href="/">Home</a></li>
 				
+          			<li><a href="/archives">Archives</a></li>
 				
-
-					<li><a href="javascript:;" id="toggle-theme"><i id="theme-icon" class="fas fa-sun"></i></a></li>
+          			<li><a href="/categories">Categories</a></li>
+				
+          			<li><a href="/tags">Tags</a></li>
+				
+          			<li><a href="/links">Links</a></li>
 				
 				
+				<li><a href="/search/" id="search-btn"><i class="fas fa-search meta-icon"></i></a></li>
 				
-	
-			
+				
+				<li><a href="javascript:;" onclick="toggleDark()"><i class="fas fa-sun meta-icon" id="toggle-dark-icon"></i></a></li>
+				
 			</ul>
 		</div>
 	</div>
@@ -82,7 +160,7 @@
       
       <span class="post-meta ml-10">
         <i class="fa fa-file-word meta-icon"></i>
-        共 75 字
+        共 54 字
       </span>
     
     
@@ -94,66 +172,77 @@
         1
          分钟
       </span>
+    
     
   </div>
   
   
 </div>
 <div class="article-m">
-    <div id="article">
-        <!-- <div class="post-meta" id="post-meta">
-  <h3>Hello World</h3>
+  <div class="post-toc">
     
-      <span class="post-meta-label">
-        <i class="fa fa-user meta-icon" aria-hidden="true"></i>
-        YFun
-      </span>
-    
-    
-      <span class="post-meta-label ml-10">
-        <i class="fa fa-calendar meta-icon" aria-hidden="true"></i>
-        <time datetime="2020-12-25 18:31" pubdate>
-          2020年12月25日
-        </time>
-      </span>
-    
-    
-      
-      <span class="post-meta ml-10">
-        <i class="fa fa-file-word meta-icon"></i>
-        共 75 字
-      </span>
-    
-    
-      
-      <span class="post-meta ml-10">
-        <i class="fa fa-clock meta-icon"></i>
-        
-        预计 
-        1
-         分钟
-      </span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#H1"><span class="toc-number">1.</span> <span class="toc-text">H1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#H2"><span class="toc-number">1.1.</span> <span class="toc-text">H2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#H3"><span class="toc-number">1.1.1.</span> <span class="toc-text">H3</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#H4"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">H4</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#H5"><span class="toc-number">1.1.1.1.1.</span> <span class="toc-text">H5</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#H6"><span class="toc-number">1.1.1.1.1.1.</span> <span class="toc-text">H6</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
     
   </div>
-  
-   -->
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <div id="article">
+      <div id="post-content">
+        <h1 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h1><h2 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h2><h3 id="H3"><a href="#H3" class="headerlink" title="H3"></a>H3</h3><h4 id="H4"><a href="#H4" class="headerlink" title="H4"></a>H4</h4><h5 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h5><h6 id="H6"><a href="#H6" class="headerlink" title="H6"></a>H6</h6><p>行内代码: <code>hexo new post &quot;hello world&quot;</code></p>
+<p>多行代码：</p>
+<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;hello world&quot;</span>);
+&#125;</code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+<p>表格：</p>
+<table>
+<thead>
+<tr>
+<th>H1</th>
+<th>H2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+</tr>
+</tbody></table>
+<ol>
+<li>第一条</li>
+<li>第二条</li>
+<li>第三条</li>
+</ol>
+<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> a</li>
+<li><input disabled="" type="checkbox"> b</li>
+</ul>
+<p>这是一句话 <sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="aa
+">[1]</span></a></sup></p>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>aa
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+      </div>
+          
+          
+          <br/>
+          <div class="note note-warning">
+            本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处，谢谢。
+          </div>
+          
     </div>
 </div>
 
+    <!-- Comments -->
+    <div class="comments">
+        
+        
+    </div>
 
 
 
@@ -163,21 +252,84 @@
         <!-- 引入页脚文件 -->
         <footer class="text-center">
     
-    <p></p>
-    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/hifun-team/hexo-theme-miracle" target="_blank">Miracle</a></p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme is <a href="https://github.com/hifun-team/hexo-theme-miracle" target="_blank">Miracle</a></p>
 </footer>
+<div class="p-btn">
+    
+        <a class="toc-btn" id="toc-btn"><i class="fas fa-indent"></i></a>
+    
+    <a href="#" class="click-btn"><i class="fas fa-chevron-up"></i></a>
+</div>
+
 <!-- SCRIPTS -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.18.0/js/md5.min.js"></script>
-<!-- 引入 JS 文件 -->
-
-<script src="/js/cookie.js"></script>
 
 
-<script src="/js/main.js"></script>
 
 
-<script src="/js/darkmode.js"></script>
+
+
+<script>
+    var toggle = true;
+    //导航栏按钮
+    $('.btnImg').click(function() {
+        if (toggle) {
+            toggle = false
+        } else {
+            toggle = true;
+        }
+        $(".show").slideToggle(300);
+    })
+     
+    //窗口大小发生改变
+    $(window).resize(function() {
+        //获取窗口宽度
+        var windSize = $(window).width();
+     
+        if (windSize > 885) {
+            $(".show").slideDown(0);
+        } else {
+            $(".show").slideUp(0);
+        }
+    });
+    console.log('\n' + ' %c Powered by Hexo Theme Miracle ' + ' %c https://github.com/hifun-team/hexo-theme-miracle ' + '\n' + '\n', 'color: #fff; background: #4F9BFA; padding:5px 0;', 'background: #FFF; padding:5px 0;');
+</script>
+
+<script>
+        document.onreadystatechange = function(){
+            if(document.readyState == "complete"){
+                setTimeout('$(".cloading").addClass("display-none")',1)
+            }
+        }
+</script>
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+
+    <script>
+        var content=$(".lazyload-img");var preload=0;$(document).ready(function(){function load(){var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;var winTop=window.innerHeight;for(var i=0;i<content.length;i++){if(content[i].offsetTop<=scrollTop+winTop+preload){if(!$(content[i]).attr("load")){var pageContentRaw=$(content[i]).attr("data-srcset");$(content[i]).attr('srcset',pageContentRaw);$(content[i]).attr("load",true)}}}}load();window.onscroll=function(){load()}});
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/hifun-team/hexo-theme-miracle@latest/source/js/hljs.js"></script>  
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+    <script>
+        $(".toc-btn").click(function(){
+            $(".post-toc").toggleClass("display-inline");
+        });
+    </script>
+
+
+
+
+
 
 
 

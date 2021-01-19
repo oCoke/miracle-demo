@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>网站加载动画</title>
+      <link href="/2021/01/19/loading/"/>
+      <url>/2021/01/19/loading/</url>
+      
+        <content type="html"><![CDATA[<p>首先，前往主题配置文件中修改：</p><pre><code class="hljs yaml"><span class="hljs-attr">theme:</span>    <span class="hljs-attr">loading:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># 设为 True。</span></code></pre><p>随后，您的网站便有了加载页面时的动画。</p><p>动画会遮盖屏幕上的内容，并使用 JavaScript 在页面完全加载后将其隐藏。</p><p>因此，此功能<strong>不适用</strong>于 禁用 JavaScript 的浏览器。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 博客 </tag>
+            
+            <tag> 功能 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Mermaid</title>
+      <link href="/2021/01/15/mermaid/"/>
+      <url>/2021/01/15/mermaid/</url>
+      
+        <content type="html"><![CDATA[<div class="mermaid" >sequenceDiagramparticipant Aliceparticipant BobAlice->>John: Hello John, how are you?loop Healthcheck    John->>John: Fight against hypochondriaendNote right of John: Rational thoughts <br/>prevail...John-->>Alice: Great!John->>Bob: How about you?Bob-->>John: Jolly good!</div>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Tag Note 插件</title>
+      <link href="/2021/01/11/note/"/>
+      <url>/2021/01/11/note/</url>
+      
+        <content type="html"><![CDATA[<h2 id="success"><a href="#success" class="headerlink" title="success"></a><code>success</code></h2><div class="note note-success">            <div class="title">Success</div>Tag Note 插件          </div><h2 id="danger"><a href="#danger" class="headerlink" title="danger"></a><code>danger</code></h2><div class="note note-danger">            <div class="title">danger</div>Tag Note 插件          </div><h2 id="warning"><a href="#warning" class="headerlink" title="warning"></a><code>warning</code></h2><div class="note note-warning">            <div class="title">warning</div>Tag Note 插件          </div><h2 id="info"><a href="#info" class="headerlink" title="info"></a><code>info</code></h2><div class="note note-info">            <div class="title">info</div>Tag Note 插件          </div><h2 id="default"><a href="#default" class="headerlink" title="default"></a><code>default</code></h2><div class="note note-default">            <div class="title">default</div>Tag Note 插件          </div>]]></content>
+      
+      
+      <categories>
+          
+          <category> Demo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Demo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2020/12/25/hello-world/"/>
+      <url>/2020/12/25/hello-world/</url>
+      
+        <content type="html"><![CDATA[<h1 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h1><h2 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h2><h3 id="H3"><a href="#H3" class="headerlink" title="H3"></a>H3</h3><h4 id="H4"><a href="#H4" class="headerlink" title="H4"></a>H4</h4><h5 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h5><h6 id="H6"><a href="#H6" class="headerlink" title="H6"></a>H6</h6><p>行内代码: <code>hexo new post &quot;hello world&quot;</code></p><p>多行代码：</p><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;hello world&quot;</span>);&#125;</code></pre><p>表格：</p><table><thead><tr><th>H1</th><th>H2</th></tr></thead><tbody><tr><td>1</td><td>2</td></tr><tr><td>3</td><td>4</td></tr></tbody></table><ol><li>第一条</li><li>第二条</li><li>第三条</li></ol><ul><li>1</li><li>2</li><li>3</li></ul><ul><li><input checked="" disabled="" type="checkbox"> a</li><li><input disabled="" type="checkbox"> b</li></ul><p>这是一句话 <sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="aa">[1]</span></a></sup></p><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>aa<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用 CloudFlare 加速你的网站</title>
+      <link href="/2020/12/15/use-cloudflare-to-speed-up-your-website/"/>
+      <url>/2020/12/15/use-cloudflare-to-speed-up-your-website/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>CloudFlare 为我们提供了免费的 CDN 服务，并拥有全球各地的优秀节点，作为<strong>国外比较优秀</strong>的 CDN 服务商。</p><p>但是，来自国内的访问都会被 CloudFlare 绕到大洋彼岸的美国。再加上某神秘的阻碍，导致在国内的访问一直不是很好。Ping 出延迟基本大于 &gt;= 200ms 。</p><p>在一次偶然的机会中，发现：</p><ul><li>CloudFlare 拥有很多节点。</li><li>CloudFlare 的节点之间速度非常之快。</li><li>CloudFlare 的节点之间几乎没有延迟。</li><li>CloudFlare 所有节点均免费，基本可以随便接入。</li></ul><hr><h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><p>既然发现了这个好办法，那么就开始实践吧！</p><p>首先，前往「CloudFlare Partner」的站点登录。</p><blockquote><p>这里要注意！CloudFlare 官方已经停止 CNAME 接入，只能前往「CloudFlare Partner」接入。</p></blockquote><p>以 <a href="https://cdn.moeelf.com/">萌精灵 CDN</a> 为例，打开其官网：<a href="https://cdn.moeelf.com/">https://cdn.moeelf.com/</a> 并登录你的 CloudFlare 账号。</p><p>然后点击页面右上角的「添加域名」并加你的域名接入 CloudFlare 。</p><p>                    <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/hPX5DZ.png">                        <img   class="lazyload-img" src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/hPX5DZ.png" srcset="/img/loading.svg" data-srcset="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/hPX5DZ.png"  alt="添加域名" >                    </a>                    </p><p>输入域名并点击「添加」即可添加成功。</p><p>接下来点击主页列表里的「管理 DNS」进入管理界面。</p><p>                    <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/mLAxAy.png">                        <img   class="lazyload-img" src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/mLAxAy.png" srcset="/img/loading.svg" data-srcset="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/mLAxAy.png"  alt="管理 DNS" >                    </a>                    </p><p>接下来点击「添加新记录」添加一个新的记录。</p><p>                    <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/UqyfQI.png">                        <img   class="lazyload-img" src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/UqyfQI.png" srcset="/img/loading.svg" data-srcset="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/UqyfQI.png"  alt="添加记录" >                    </a>                    </p><p>                    <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/F0QTaI.png">                        <img   class="lazyload-img" src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/F0QTaI.png" srcset="/img/loading.svg" data-srcset="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/F0QTaI.png"  alt="参考" >                    </a>                    </p><p>然后进入你域名的 DNS 管理系统，注意是解析域名的地方。</p><p>找到「CNAME 接入」处的对应 CNAME 地址，将其设为相应的解析地址。</p><hr><h2 id="加速访问"><a href="#加速访问" class="headerlink" title="加速访问"></a>加速访问</h2><p>虽然默认提供给我们的节点很慢，但我们可以从 CloudFlare 公开的节点中寻找访问速度快的节点。</p><p>我找到了几个国内速度不错的节点，可以参考参考：</p><table><thead><tr><th>IP 地址</th><th>运营商</th></tr></thead><tbody><tr><td>104.27.169.248</td><td>默认</td></tr><tr><td>104.19.19.119</td><td>移动</td></tr><tr><td>141.101.115.11</td><td>移动</td></tr><tr><td>104.16.245.1</td><td>联通</td></tr><tr><td>104.16.246.1</td><td>联通</td></tr><tr><td>104.20.157.19</td><td>电信</td></tr><tr><td>141.101.114.202</td><td>电信</td></tr></tbody></table><p>然后再将原来的 CNAME 记录改为 A 记录到以上 IP，再配合智能运营商解析，达到提速。</p><p>如果你不想一个一个设置，可以直接将「默认」记录指向 <code>cf.record.yfun.top</code> ，节点基本都是上面的，但偶尔会改变。</p><p>可能会遇到的情况：<a href="#%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E7%AD%BE%E5%8F%91-SSL-%E8%AF%81%E4%B9%A6%EF%BC%9F">无法正常签发 SSL 证书</a></p><hr><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="无法正常签发-SSL-证书？"><a href="#无法正常签发-SSL-证书？" class="headerlink" title="无法正常签发 SSL 证书？"></a>无法正常签发 SSL 证书？</h3><p>CloudFlare 默认会提供免费 SSL 证书服务，但使用「加速节点」可能导致无法正确签发。</p><p>解决方法：使用智能 DNS，将「境外」的记录解析至控制面板提供给您的官方地址。</p><hr><h3 id="开启-SSL-后访问错误？"><a href="#开启-SSL-后访问错误？" class="headerlink" title="开启 SSL 后访问错误？"></a>开启 SSL 后访问错误？</h3><p>试着为源站配置 SSL 证书，然后前往官方控制台（<a href="https://dash.cloudflare.com/">https://dash.cloudflare.com</a>）将域名的 SSL 设为「完全」。</p><p>注意：使用「完全」方式请务必确定源站已开启 SSL！</p><hr><h2 id="速度"><a href="#速度" class="headerlink" title="速度"></a>速度</h2><pre><code class="hljs bash">PING cf.record.yfun.top (141.101.115.11): 56 data bytes64 bytes from 141.101.115.11: icmp_seq=0 ttl=52 time=17.007 ms64 bytes from 141.101.115.11: icmp_seq=1 ttl=52 time=16.363 ms64 bytes from 141.101.115.11: icmp_seq=2 ttl=52 time=21.385 ms64 bytes from 141.101.115.11: icmp_seq=3 ttl=52 time=19.305 ms64 bytes from 141.101.115.11: icmp_seq=4 ttl=52 time=16.341 ms64 bytes from 141.101.115.11: icmp_seq=5 ttl=52 time=23.181 ms64 bytes from 141.101.115.11: icmp_seq=6 ttl=52 time=18.888 ms64 bytes from 141.101.115.11: icmp_seq=7 ttl=52 time=18.087 ms64 bytes from 141.101.115.11: icmp_seq=8 ttl=52 time=16.153 ms64 bytes from 141.101.115.11: icmp_seq=9 ttl=52 time=19.363 ms--- cf.record.yfun.top ping statistics ---10 packets transmitted, 10 packets received, 0.0% packet lossround-trip min/avg/max/stddev = 16.153/18.607/23.181/2.209 ms</code></pre><p>可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！可以看到速度还是不错的！</p><div class="note note-success">            <div class="title">Tag 插件</div>不错！你成功了！          </div><div class="note note-danger">            <div class="title">hello world</div>  这是一篇发布于 263 天前的文章，部分信息可能已发生改变，请注意甄别。          </div><div class="note note-warning">            <div class="title">hello world</div>  这是一篇发布于 263 天前的文章，部分信息可能已发生改变，请注意甄别。          </div><div class="note note-info">            <div class="title">hello world</div>  这是一篇发布于 263 天前的文章，部分信息可能已发生改变，请注意甄别。          </div><div class="note note-default">            <div class="title">hello world</div>  这是一篇发布于 263 天前的文章，部分信息可能已发生改变，请注意甄别。          </div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 极客 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客 </tag>
+            
+            <tag> CDN </tag>
+            
+            <tag> CloudFlare </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
