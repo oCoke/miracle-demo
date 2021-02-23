@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
     <link rel="icon" type="image/png" href="/img/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-    <title>404 Not Found - Miracle</title>
+    <title>Card 组件 - Miracle</title>
     
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hifun-team/hexo-theme-miracle@latest/source/icon/css/all.min.css">
@@ -288,18 +288,122 @@ header .header__right .dropdown-menus .dropdown-menu {
         <div id="page-main" class="main-content">
         <div class="mg-top">
             
+
 <div id="post-meta-m">
     <div class="post-meta" id="post-meta">
-      <h3>404 Not Found</h3>
-      <p class="404-text">啊哦，页面走丢了~</p>
-    </div>
+  <h3>Card 组件</h3>
+    
+      <span class="post-meta-label">
+        <i class="fa fa-user meta-icon" aria-hidden="true"></i>
+        YFun
+      </span>
+    
+    
+      <span class="post-meta-label ml-10">
+        <i class="fa fa-calendar meta-icon" aria-hidden="true"></i>
+        <time datetime="2021-01-21 16:07" pubdate>
+          2021年1月21日
+        </time>
+      </span>
+    
+    
+      
+      <span class="post-meta ml-10">
+        <i class="fa fa-file-word meta-icon"></i>
+        共 3 字
+      </span>
+    
+    
+      
+      <span class="post-meta ml-10">
+        <i class="fa fa-clock meta-icon"></i>
+        
+        预计 
+        1
+         分钟
+      </span>
+    
+    
   </div>
-<script>
-    function redirect() {
-        location.href = "/";
-    }
-  // setTimeout(redirect, 3000)
-</script>
+  
+  
+</div>
+<div class="article-m">
+  <div class="post-toc"></div>
+    <div id="article">
+      <div id="post-content" class="markdown-body">
+        <!-- <div class="collapse">
+
+<div class="header">
+
+<span class="title">Title</span>
+<span class="icon fas fa-chevron-down"></span>
+</div>
+
+<div class="content">
+This is my content...<br/>
+This is my content...<br/>
+This is my content...<br/>
+This is my content...<br/>
+This is my content...<br/>
+This is my content...<br/>
+This is my content...<br/>
+</div>
+
+</div>
+
+
+<br/>
+
+<div class="collapse">
+
+<div class="header">
+<span class="title">Title</span>
+<span class="icon fas fa-chevron-down"></span>
+</div>
+<div class="content">
+This is my content...<br/>
+This is my content...<br/>
+This is my content...<br/>
+This is my content...<br/>
+This is my content...<br/>
+This is my content...<br/>
+This is my content...<br/>
+</div>
+
+</div> -->
+
+
+<div class="collapse">
+            <div class="header">
+            <span class="title">Card</span>
+            <span class="icon fas fa-chevron-down"></span>
+            </div>
+            <div class="content">
+            <p>Hello World</p>
+            </div>
+            </div>
+      </div>
+          
+          
+          <br/>
+          <div class="note note-warning">
+            本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处，谢谢。
+          </div>
+          
+    </div>
+</div>
+
+    <!-- Comments -->
+    <div class="comments">
+        
+        
+
+    </div>
+
+
+
+
         </div>
         </div>
         <footer class="text-center">
@@ -309,6 +413,8 @@ header .header__right .dropdown-menus .dropdown-menu {
     <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme is <a href="https://github.com/hifun-team/hexo-theme-miracle" target="_blank">Miracle</a></p>
 </footer>
 <div class="p-btn">
+    
+        <a class="toc-btn" id="toc-btn"><i class="fas fa-indent"></i></a>
     
     <a href="#" class="click-btn"><i class="fas fa-chevron-up"></i></a>
 </div>
@@ -441,9 +547,29 @@ document.getElementById("btn-dropdown").addEventListener('click', () => {
 
 
 
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 
 
+    <script>
+        var content=$(".lazyload-img");var preload=0;$(document).ready(function(){function load(){var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;var winTop=window.innerHeight;for(var i=0;i<content.length;i++){if(content[i].offsetTop<=scrollTop+winTop+preload){if(!$(content[i]).attr("load")){var pageContentRaw=$(content[i]).attr("data-srcset");$(content[i]).attr('srcset',pageContentRaw);$(content[i]).attr("load",true)}}}}load();window.onscroll=function(){load()}});
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/hifun-team/hexo-theme-miracle@latest/source/js/hljs.js"></script>  
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+    <script>
+        $(".toc-btn").click(function(){
+            if ($('.post-toc').html()){
+                $(".post-toc").toggleClass("display-inline");
+            }else{
+                alert("本文没有目录哦~");
+            }
+        });
+    </script>
 
 
 

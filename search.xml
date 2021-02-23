@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Card 组件</title>
+      <link href="/2021/01/21/collapse/"/>
+      <url>/2021/01/21/collapse/</url>
+      
+        <content type="html"><![CDATA[<!-- <div class="collapse"><div class="header"><span class="title">Title</span><span class="icon fas fa-chevron-down"></span></div><div class="content">This is my content...<br/>This is my content...<br/>This is my content...<br/>This is my content...<br/>This is my content...<br/>This is my content...<br/>This is my content...<br/></div></div><br/><div class="collapse"><div class="header"><span class="title">Title</span><span class="icon fas fa-chevron-down"></span></div><div class="content">This is my content...<br/>This is my content...<br/>This is my content...<br/>This is my content...<br/>This is my content...<br/>This is my content...<br/>This is my content...<br/></div></div> --><div class="collapse">            <div class="header">            <span class="title">Card</span>            <span class="icon fas fa-chevron-down"></span>            </div>            <div class="content">            <p>Hello World</p>            </div>            </div>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>网站加载动画</title>
       <link href="/2021/01/19/loading/"/>
       <url>/2021/01/19/loading/</url>
