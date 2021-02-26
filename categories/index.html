@@ -10,7 +10,7 @@
     <title>分类 - Miracle</title>
     
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hifun-team/hexo-theme-miracle@latest/source/icon/css/all.min.css">
+    
     
     
     <meta name="description" content="">
@@ -20,14 +20,14 @@
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" as="script">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="/css/main.min.css" media="print" onload="this.media='all';this.onload=null">
-    <noscript><link rel="stylesheet" href="/css/main.min.css"></noscript>
-    <style>.hljs-comment,.hljs-quote{color:#969896;}.hljs-variable,.hljs-template-variable,.hljs-tag,.hljs-name,.hljs-selector-id,.hljs-selector-class,.hljs-regexp,.hljs-deletion{color:#cc6666;}.hljs-number,.hljs-built_in,.hljs-builtin-name,.hljs-literal,.hljs-type,.hljs-params,.hljs-meta,.hljs-link{color:#de935f;}.hljs-attribute{color:#f0c674;}.hljs-string,.hljs-symbol,.hljs-bullet,.hljs-addition{color:#b5bd68;}.hljs-title,.hljs-section{color:#81a2be;}.hljs-keyword,.hljs-selector-tag{color:#b294bb;}.hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:0.5em;}.hljs-emphasis{font-style:italic;}.hljs-strong{font-weight:bold;}
+    <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all';this.onload=null">
+    <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+    <style>.hljs{display:block;overflow-x:auto;padding:.5em;color:#abb2bf;background:#282c34}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-formula,.hljs-keyword{color:#c678dd}.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#e06c75}.hljs-literal{color:#56b6c2}.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#98c379}.hljs-built_in,.hljs-class .hljs-title{color:#e6c07b}.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#d19a66}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#61aeee}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-link{text-decoration:underline}
 </style>
 <style>
     :root{
         --shadow-color: rgba(0,0,0,0.2);
-        --sec-shadow: rgba(0,0,0,0.1);
+        --sec-shadow: rgba(0,0,0,0.03);
         --shadow-hover-color: rgba(0,0,0,0.28);
         --first-text-color: #475b6d;
         --second-text-color: #37475b;
@@ -48,6 +48,8 @@
         --home-title-color: #4169E1;
         --shadow: 0 4px 10px rgba(0,2,4,0.06),0 0 1px rgba(0,2,4,0.11);
         --hr-color: #ddd;
+        --bg-t: #f4f4f4;
+        
     }
 
 
@@ -75,6 +77,7 @@
     --code-color:#3e4b5e;
     --shadow: none;
     --hr-color: #718096;
+    --bg-t: #364151;
   }
 }
 
@@ -99,6 +102,7 @@
     --code-color:#3e4b5e;
     --shadow: none;
     --hr-color: #718096;
+    --bg-t: #364151;
 }
 
 </style>
@@ -245,6 +249,7 @@ header .header__right .dropdown-icon {
     background-color: transparent;
 }
 header .header__right .dropdown-menus {
+    line-height: 2rem;
     animation: slide-in .15s ease 1;
     display: none;
     position: absolute;
@@ -253,7 +258,6 @@ header .header__right .dropdown-menus {
     top: calc(54px + 10px);
     border-radius: 6px;
     padding: 24px;
-    line-height: 1.8rem;
     background-color: var(--page-bkg-color);
     border: 1px solid var(--bkg-m);
     z-index: 9999;
@@ -336,6 +340,118 @@ header .header__right .dropdown-menus .dropdown-menu {
             document.body.appendChild(script);
         }
     </script>
+    
+        <script>
+        (() => {
+          const rootElement = document.documentElement;
+          const darkModeStorageKey = 'user-color-scheme';
+          const darkModeMediaQueryKey = '--color-mode';
+          const rootElementDarkModeAttributeName = 'data-user-color-scheme';
+      
+          const setLS = (k, v) => {
+              try {
+                  localStorage.setItem(k, v);
+              } catch (e) {}
+          };
+      
+          const removeLS = (k) => {
+              try {
+                  localStorage.removeItem(k);
+              } catch (e) {}
+          };
+      
+          const getLS = (k) => {
+              try {
+                  return localStorage.getItem(k);
+              } catch (e) {
+                  return null;
+              }
+          };
+      
+          const getModeFromCSSMediaQuery = () => {
+              const res = getComputedStyle(rootElement).getPropertyValue(darkModeMediaQueryKey);
+              if (res.length) return res.replace(/["'\s]/g, '');
+              return res === 'dark' ? 'dark' : 'light';
+          };
+      
+          const resetRootDarkModeAttributeAndLS = () => {
+              rootElement.removeAttribute(rootElementDarkModeAttributeName);
+              removeLS(darkModeStorageKey);
+          };
+      
+          const validColorModeKeys = {
+              dark: true,
+              light: true,
+          };
+      
+          const applyCustomDarkModeSettings = (mode) => {
+              const currentSetting = mode || getLS(darkModeStorageKey);
+      
+              if (document.getElementById('hl-dark-theme')) {
+                  if (validColorModeKeys[currentSetting]) {
+                      if (currentSetting === 'dark') {
+                          document.getElementById('hl-default-theme').media = 'none';
+                          document.getElementById('hl-dark-theme').media = 'all';
+                      } else {
+                          document.getElementById('hl-dark-theme').media = 'none';
+                          document.getElementById('hl-default-theme').media = 'all';
+                      }
+                  } else {
+                      if (getModeFromCSSMediaQuery() === 'dark') {
+                          document.getElementById('hl-default-theme').media = 'none';
+                          document.getElementById('hl-dark-theme').media = 'all';
+                      } else {
+                          document.getElementById('hl-dark-theme').media = 'none';
+                          document.getElementById('hl-default-theme').media = 'all';
+                      }
+                  }
+              } else if (document.getElementById('hl-default-theme')) {
+                  document.getElementById('hl-default-theme').media = 'all';
+              }
+      
+              if (currentSetting === getModeFromCSSMediaQuery()) {
+                  resetRootDarkModeAttributeAndLS();
+              } else if (validColorModeKeys[currentSetting]) {
+                  rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+              } else {
+                  resetRootDarkModeAttributeAndLS();
+              }
+          };
+      
+          const invertDarkModeObj = {
+              dark: 'light',
+              light: 'dark',
+          };
+      
+          const toggleCustomDarkMode = () => {
+              var currentSetting = getLS(darkModeStorageKey);
+      
+              if (validColorModeKeys[currentSetting]) {
+                  currentSetting = invertDarkModeObj[currentSetting];
+              } else if (currentSetting === null) {
+                  currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+              } else {
+                  return;
+              }
+              setLS(darkModeStorageKey, currentSetting);
+      
+              return currentSetting;
+          };
+      
+          applyCustomDarkModeSettings();
+      
+          window.onload = () => {
+              const darkModeToggleBottonElement = document.getElementById('btn-toggle-dark');
+              darkModeToggleBottonElement.addEventListener('click', () => {
+                  applyCustomDarkModeSettings(toggleCustomDarkMode());
+              });
+          };
+      })();
+      
+      
+        </script>
+        
+        
 <meta name="generator" content="Hexo 5.2.0"></head>
 
     <body>
@@ -346,26 +462,6 @@ header .header__right .dropdown-menus .dropdown-menu {
 </div>
 <div class="header__right">
 	<div class="navbar__menus">
-		
-		<a href="/" class="button">
-			<div class="navbar-menu">Home</div>
-		</a>
-		
-		<a href="/archives" class="button">
-			<div class="navbar-menu">Archives</div>
-		</a>
-		
-		<a href="/categories" class="button">
-			<div class="navbar-menu">Categories</div>
-		</a>
-		
-		<a href="/tags" class="button">
-			<div class="navbar-menu">Tags</div>
-		</a>
-		
-		<a href="/links" class="button">
-			<div class="navbar-menu">Links</div>
-		</a>
 		
 	</div>
 	<a href="/search/" class="button">
@@ -398,21 +494,6 @@ header .header__right .dropdown-menus .dropdown-menu {
 	</a>
 	<div class="dropdown-menus" id="dropdown-menus">
 		
-		<a href="/" class="dropdown-menu button">Home</a>
-		<br>
-		
-		<a href="/archives" class="dropdown-menu button">Archives</a>
-		<br>
-		
-		<a href="/categories" class="dropdown-menu button">Categories</a>
-		<br>
-		
-		<a href="/tags" class="dropdown-menu button">Tags</a>
-		<br>
-		
-		<a href="/links" class="dropdown-menu button">Links</a>
-		<br>
-		
 	</div>
 </div>
 
@@ -420,26 +501,34 @@ header .header__right .dropdown-menus .dropdown-menu {
         <div id="page-main" class="main-content">
         <div class="mg-top">
             
-<div id="post-meta-m">
+<article class="page">
+<div id="post-meta-m" style="padding-bottom:0;">
     <div class="post-meta" id="post-meta">
       <h3>分类</h3>
     </div>
   </div>
-    <div class="tag-page-main">
+    <div class="archive-list" style="padding-top:10px;">
         <div class="category-list-content">
             <ul class="all-category-list"><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/Demo/">Demo</a><span class="all-category-list-count">1</span></li><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/%E6%9E%81%E5%AE%A2/">极客</a><span class="all-category-list-count">1</span></li></ul>
         </div>
     </div>
+  </article>
         </div>
         <footer class="text-center">
     
     
     
-    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme is <a href="https://github.com/hifun-team/hexo-theme-miracle" target="_blank">Miracle</a></p>
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme by <a href="https://github.com/hifun-team/hexo-theme-miracle" target="_blank">Miracle</a></p>
+    
+    
 </footer>
+
 <div class="p-btn">
     
-    <a href="#" class="click-btn"><i class="fas fa-chevron-up"></i></a>
+    <a href="#" class="click-btn">
+      <i id="i-up"></i>
+    </a>
 </div>
 
 <!-- SCRIPTS -->
@@ -450,116 +539,19 @@ header .header__right .dropdown-menus .dropdown-menu {
 
 
 
-  <script>
-  const rootElement = document.documentElement; // <html>
-  const darkModeStorageKey = 'user-color-scheme'; // 作为 localStorage 的 key
-  const darkModeMediaQueryKey = '--color-mode';
-  const rootElementDarkModeAttributeName = 'data-user-color-scheme';
-  const darkModeTogglebuttonElement = document.getElementById("btn-toggle-dark");
-  const setLS = (k, v) => {
-    try {
-      localStorage.setItem(k, v);
-    } catch (e) { }
-  }
-  
-  const removeLS = (k) => {
-    try {
-      localStorage.removeItem(k);
-    } catch (e) { }
-  }
-  
-  const getLS = (k) => {
-    try {
-      return localStorage.getItem(k);
-    } catch (e) {
-      return null // 与 localStorage 中没有找到对应 key 的行为一致
-    }
-  }
-  const getModeFromCSSMediaQuery = () => {
-    const res = getComputedStyle(rootElement).getPropertyValue(darkModeMediaQueryKey);
-    if (res.length) return res.replace(/\"/g, '').trim();
-    return res === 'dark' ? 'dark' : 'light';
-    
-    // 使用 matchMedia API 的写法会优雅的多
-    // return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  }
-  const resetRootDarkModeAttributeAndLS = () => {
-    rootElement.removeAttribute(rootElementDarkModeAttributeName);
-    removeLS(darkModeStorageKey);
-  }
-  const validColorModeKeys = {
-    'dark': true,
-    'light': true
-  }
-  
-  const applyCustomDarkModeSettings = (mode) => {
-    // 接受从「开关」处传来的模式，或者从 localStorage 读取
-    const currentSetting = mode || getLS(darkModeStorageKey);
-  
-    if (currentSetting === getModeFromCSSMediaQuery()) {
-      // 当用户自定义的显示模式和 prefers-color-scheme 相同时重置、恢复到自动模式
-      resetRootDarkModeAttributeAndLS();
-    } else if (validColorModeKeys[currentSetting]) { // 相比 Array#indexOf，这种写法 Uglify 后字节数更少
-      rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
-    } else {
-      // 首次访问或从未使用过开关、localStorage 中没有存储的值，currentSetting 是 null
-      // 或者 localStorage 被篡改，currentSetting 不是合法值
-      resetRootDarkModeAttributeAndLS();
-    }
-  }
-  const invertDarkModeObj = {
-    'dark': 'light',
-    'light': 'dark'
-  }
-  
-  const toggleCustomDarkMode = () => {
-    let currentSetting = getLS(darkModeStorageKey);
-    
-    if (validColorModeKeys[currentSetting]) {
-      // 从 localStorage 中读取模式，并取相反的模式
-      currentSetting = invertDarkModeObj[currentSetting];
-    } else if (currentSetting === null) {
-      // localStorage 中没有相关值，或者 localStorage 抛了 Error
-      // 从 CSS 中读取当前 prefers-color-scheme 并取相反的模式
-      currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
-    } else {
-      // 不知道出了什么幺蛾子，比如 localStorage 被篡改成非法值
-      return; // 直接 return;
-    }
-    // 将相反的模式写入 localStorage
-    setLS(darkModeStorageKey, currentSetting);
-  
-    return currentSetting;
-  }
-  // 当页面加载时，将显示模式设置为 localStorage 中自定义的值（如果有的话）
-  applyCustomDarkModeSettings();
-  darkModeTogglebuttonElement.addEventListener('click', () => {
-    // 当用户点击「开关」时，获得新的显示模式、写入 localStorage、并在页面上生效
-    applyCustomDarkModeSettings(toggleCustomDarkMode());
-  });
-  
-  document.getElementById("btn-dropdown").addEventListener('click', () => {
+<script>
+    document.getElementById("btn-dropdown").addEventListener('click', () => {
     $("#dropdown-menus").toggleClass("display-inline");
   });
-  </script>
-  
-<script>
+
     var cToggle = true;
     $('.collapse .header').click(function() {
-        if (cToggle) {
-            cToggle = false
-            $(".collapse .header .icon").removeClass("fas fa-chevron-down");
-            $(".collapse .header .icon").addClass("fas fa-chevron-up");
-        } else {
-          cToggle = true;
-          $(".collapse .header .icon").removeClass("fas fa-chevron-up");
-          $(".collapse .header .icon").addClass("fas fa-chevron-down");
-        }
         $(".collapse .content").slideToggle(250);
     });
     console.log('\n' + ' %c Powered by Hexo Theme Miracle ' + ' %c https://github.com/hifun-team/hexo-theme-miracle ' + '\n' + '\n', 'color: #fff; background: #4F9BFA; padding:5px 0;', 'background: #FFF; padding:5px 0;');
-</script>
 
+    
+</script>
 
 
 
